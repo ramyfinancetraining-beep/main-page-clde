@@ -6,7 +6,7 @@
   <title>أ. محمد رامي — خبير مالي ومدرب معتمد</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
   <style>
     :root {
       --navy: #0a1628;
@@ -27,7 +27,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Cairo', 'Tajawal', sans-serif;
+      font-family: 'Cairo', sans-serif;
       background: var(--navy);
       color: var(--white);
       overflow-x: hidden;
@@ -645,6 +645,170 @@
       text-align: center;
     }
 
+
+    /* ─── HERO IMAGE ─── */
+    .hero-img-wrap {
+      position: absolute;
+      top: 0; right: 0;
+      width: 38%;
+      max-width: 420px;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, black 60%),
+                  linear-gradient(to top, transparent 0%, black 15%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 30%, black 60%),
+                          linear-gradient(to top, transparent 0%, black 15%);
+      mask-composite: intersect;
+      -webkit-mask-composite: destination-in;
+    }
+
+    .hero-img-wrap.hero-img-missing .hero-img { display: none; }
+
+    .hero-img-placeholder {
+      display: none;
+      position: absolute;
+      inset: 0;
+      background: rgba(201,162,39,0.06);
+      border: 2px dashed rgba(201,162,39,0.3);
+      border-radius: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: rgba(201,162,39,0.6);
+      font-size: 13px;
+      font-family: 'Cairo', sans-serif;
+    }
+
+    .hero-img-wrap.hero-img-missing .hero-img-placeholder { display: flex; }
+    .hero-img-placeholder span:first-child { font-size: 32px; }
+
+    @media (max-width: 700px) {
+      .hero-img-wrap { width: 100%; opacity: 0.15; }
+    }
+
+    /* ─── TRAINING SECTION ─── */
+    .training-section {
+      padding: 60px 5%;
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(180deg, transparent, rgba(10,22,40,0.6), transparent);
+    }
+
+    .training-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .training-img-wrap {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    .training-img {
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .training-img-wrap.img-missing .training-img { display: none; }
+
+    .training-img-placeholder {
+      display: none;
+      width: 100%;
+      height: 280px;
+      background: rgba(201,162,39,0.05);
+      border: 2px dashed rgba(201,162,39,0.25);
+      border-radius: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(201,162,39,0.5);
+      font-family: 'Cairo', sans-serif;
+      font-size: 13px;
+    }
+
+    .training-img-wrap.img-missing .training-img-placeholder { display: flex; }
+    .training-img-placeholder span:first-child { font-size: 36px; }
+
+    .training-caption {
+      margin-top: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      font-family: 'Cairo', sans-serif;
+      padding-bottom: 4px;
+    }
+
+    /* ─── INFOGRAPHIC SECTION ─── */
+    .info-section {
+      padding: 60px 5%;
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .info-section .section-label {
+      margin-bottom: 28px;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .info-img-wrap {
+      position: relative;
+      display: inline-block;
+      max-width: 700px;
+      width: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--card-border);
+    }
+
+    .info-img {
+      width: 100%;
+      display: block;
+      border-radius: 20px;
+    }
+
+    .info-img-wrap.img-missing .info-img { display: none; }
+
+    .info-img-placeholder {
+      display: none;
+      width: 100%;
+      height: 300px;
+      background: rgba(201,162,39,0.05);
+      border: 2px dashed rgba(201,162,39,0.25);
+      border-radius: 20px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: rgba(201,162,39,0.5);
+      font-family: 'Cairo', sans-serif;
+      font-size: 13px;
+    }
+
+    .info-img-wrap.img-missing .info-img-placeholder { display: flex; }
+    .info-img-placeholder span:first-child { font-size: 36px; }
+
   </style>
 </head>
 <body>
@@ -657,7 +821,7 @@
   <!-- Topbar -->
   <nav class="topbar">
     <a href="#" class="logo-wrap">
-      <div class="logo-badge">MR</div>
+      <div class="logo-badge" style="background:transparent;border:none;box-shadow:none;padding:0;overflow:hidden;"><img src="logo.png" alt="شعار أ. محمد رامي" style="width:44px;height:44px;object-fit:contain;border-radius:10px;" onerror="this.style.display='none';this.parentElement.innerHTML='MR';this.parentElement.style.cssText='width:44px;height:44px;background:linear-gradient(135deg,#c9a227,#e8c547);border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:18px;color:#0a1628;flex-shrink:0;box-shadow:0 4px 18px rgba(201,162,39,0.35);';" /></div>
       <div class="logo-text">
         <div class="name">أ. محمد رامي</div>
         <div class="sub">خبير مالي ومدرب معتمد</div>
@@ -669,6 +833,17 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg-glow"></div>
+
+    <!-- Hero Image Placeholder -->
+    <div class="hero-img-wrap">
+      <img src="hero.png" alt="أ. محمد رامي" class="hero-img"
+        onerror="this.parentElement.classList.add('hero-img-missing')" />
+      <div class="hero-img-placeholder">
+        <span>📸</span>
+        <span>hero.png</span>
+      </div>
+    </div>
+
     <div class="hero-content">
       <div class="hero-badge">✦ بني سويف — مصر</div>
       <h1 class="hero-name">أ. محمد رامي</h1>
@@ -813,6 +988,36 @@
             <span class="cred-text">مؤلف كتابَي "المدخل السهل لفهم الإكسيل المحاسبي" و"دليل الطلاب إلى فهم SAP ERP"</span>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Training Photo Section -->
+  <section class="training-section">
+    <div class="training-inner">
+      <div class="training-img-wrap">
+        <img src="training.jpg" alt="أ. محمد رامي في قاعة التدريب" class="training-img"
+          onerror="this.parentElement.classList.add('img-missing')" />
+        <div class="training-img-placeholder">
+          <span>📸</span>
+          <span>training.jpg</span>
+        </div>
+        <div class="training-caption">أ. محمد رامي في إحدى قاعات التدريب</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Infographic Section -->
+  <section class="info-section">
+    <div class="section-label">تعرف على أ. محمد رامي</div>
+    <div class="info-img-wrap">
+      <img src="info.png" alt="إنفوجراف محمد رامي" class="info-img"
+        onerror="this.parentElement.classList.add('img-missing')" />
+      <div class="info-img-placeholder">
+        <span>📊</span>
+        <span>info.png</span>
       </div>
     </div>
   </section>
